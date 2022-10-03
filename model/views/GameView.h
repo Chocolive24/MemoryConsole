@@ -1,5 +1,5 @@
 #pragma once
-#include "../../lib/ConsoleViewController.h"
+#include "../../libs/ConsoleViewController/ConsoleViewController.h"
 #include "../controller/MainController.h"
 
 class GameView : public Console::View

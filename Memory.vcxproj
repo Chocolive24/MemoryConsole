@@ -129,39 +129,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="model\interactiveObjects\CardButton.cpp" />
+    <ClCompile Include="libs\ConsoleViewController\controller\Controller.cpp" />
+    <ClCompile Include="libs\ConsoleViewController\utilities\Utility.cpp" />
+    <ClCompile Include="libs\ConsoleViewController\view\Image.cpp" />
+    <ClCompile Include="libs\ConsoleViewController\view\interactive\InteractiveObject.cpp" />
+    <ClCompile Include="libs\ConsoleViewController\view\interactive\objects\BasicButton.cpp" />
+    <ClCompile Include="libs\ConsoleViewController\view\interactive\objects\BasicField.cpp" />
+    <ClCompile Include="libs\ConsoleViewController\view\interactive\objects\ImageButton.cpp" />
+    <ClCompile Include="libs\ConsoleViewController\view\interactive\objects\IntField.cpp" />
+    <ClCompile Include="libs\ConsoleViewController\view\interactive\objects\Selector.cpp" />
+    <ClCompile Include="libs\ConsoleViewController\view\Screen.cpp" />
+    <ClCompile Include="libs\ConsoleViewController\view\View.cpp" />
     <ClCompile Include="model\card\Card.cpp" />
     <ClCompile Include="model\views\GameView.cpp" />
-    <ClCompile Include="lib\controller\Controller.cpp" />
-    <ClCompile Include="lib\utilities\Utility.cpp" />
-    <ClCompile Include="lib\view\Image.cpp" />
-    <ClCompile Include="lib\view\interactive\InteractiveObject.cpp" />
-    <ClCompile Include="lib\view\interactive\objects\BasicButton.cpp" />
-    <ClCompile Include="lib\view\interactive\objects\BasicField.cpp" />
-    <ClCompile Include="lib\view\interactive\objects\ImageButton.cpp" />
-    <ClCompile Include="lib\view\interactive\objects\IntField.cpp" />
-    <ClCompile Include="lib\view\interactive\objects\Selector.cpp" />
-    <ClCompile Include="lib\view\Screen.cpp" />
-    <ClCompile Include="lib\view\View.cpp" />
     <ClCompile Include="model\controller\MainController.cpp" />
     <ClCompile Include="Memory.cpp" />
     <ClCompile Include="model\card\Pattern.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="model\interactiveObjects\CardButton.h" />
+    <ClInclude Include="libs\ConsoleViewController\ConsoleViewController.h" />
+    <ClInclude Include="libs\ConsoleViewController\Constants.h" />
+    <ClInclude Include="libs\ConsoleViewController\controller\Controller.h" />
+    <ClInclude Include="libs\ConsoleViewController\utilities\Utility.h" />
+    <ClInclude Include="libs\ConsoleViewController\view\Image.h" />
+    <ClInclude Include="libs\ConsoleViewController\view\interactive\InteractiveObject.h" />
+    <ClInclude Include="libs\ConsoleViewController\view\interactive\objects\BasicButton.h" />
+    <ClInclude Include="libs\ConsoleViewController\view\interactive\objects\BasicField.h" />
+    <ClInclude Include="libs\ConsoleViewController\view\interactive\objects\ImageButton.h" />
+    <ClInclude Include="libs\ConsoleViewController\view\interactive\objects\IntField.h" />
+    <ClInclude Include="libs\ConsoleViewController\view\interactive\objects\Selector.h" />
+    <ClInclude Include="libs\ConsoleViewController\view\Screen.h" />
+    <ClInclude Include="libs\ConsoleViewController\view\View.h" />
     <ClInclude Include="model\card\Card.h" />
     <ClInclude Include="model\views\GameView.h" />
-    <ClInclude Include="lib\ConsoleViewController.h" />
-    <ClInclude Include="lib\Constants.h" />
-    <ClInclude Include="lib\controller\Controller.h" />
-    <ClInclude Include="lib\utilities\Utility.h" />
-    <ClInclude Include="lib\view\Image.h" />
-    <ClInclude Include="lib\view\interactive\InteractiveObject.h" />
-    <ClInclude Include="lib\view\interactive\objects\BasicButton.h" />
-    <ClInclude Include="lib\view\interactive\objects\BasicField.h" />
-    <ClInclude Include="lib\view\interactive\objects\ImageButton.h" />
-    <ClInclude Include="lib\view\interactive\objects\IntField.h" />
-    <ClInclude Include="lib\view\interactive\objects\Selector.h" />
-    <ClInclude Include="lib\view\Screen.h" />
-    <ClInclude Include="lib\view\View.h" />
     <ClInclude Include="model\controller\MainController.h" />
     <ClInclude Include="model\card\Pattern.h" />
   </ItemGroup>

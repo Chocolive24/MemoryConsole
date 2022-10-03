@@ -14,7 +14,7 @@ MainController::MainController()
 void MainController::IntializeGame()
 {
 	_cards = {};
-	std::vector<Pattern> patterns = {
+	const std::vector<Pattern> patterns = {
 		PatternCat(),
 		PatternClubs(),
 		PatternDiamond(),
@@ -28,9 +28,10 @@ void MainController::IntializeGame()
 
 	for (int i = 0; i < 2; i++)
 	{
-		for (auto pattern: patterns)
+		for (const auto& pattern: patterns)
 		{
-			_cards.emplace_back(Card(pattern));
+			Card card = Card(pattern);
+			_cards.emplace_back(card);
 		}
 	}
 

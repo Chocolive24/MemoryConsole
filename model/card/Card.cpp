@@ -1,7 +1,9 @@
 #include "Card.h"
 
-Card::Card(Pattern pattern, Console::Foreground foreground)
+#include <utility>
+
+Card::Card(Pattern pattern, const Console::Foreground foreground)
 {
-	_pattern = pattern;
+	_pattern = std::move(pattern);
 	_foreground = foreground;
 }
