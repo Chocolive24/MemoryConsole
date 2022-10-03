@@ -14,8 +14,8 @@ CardButton::CardButton(const std::function<int(Console::Screen)> getX, const std
 void CardButton::Draw(Console::Controller* controller, Console::Screen& screen, const bool selected)
 {
 	const auto mainController = dynamic_cast<MainController*>(controller);
-	auto background = Console::Background::WHITE;
-	auto foreground = Console::Foreground::BLACK;
+	auto background = Console::Background::DARK_GRAY;
+	auto foreground = Console::Foreground::LIGHT_MAGENTA;
 	int y = _getY(screen);
 	int x = _getX(screen);
 	Console::Image image = mainController->GetHiddenImage();
@@ -23,14 +23,14 @@ void CardButton::Draw(Console::Controller* controller, Console::Screen& screen, 
 
 	if (card.IsFound() || card.IsSelected())
 	{
-		background = _background;
+		background = Console::Background::WHITE;
 		foreground = _foreground;
 		image = card.GetPattern().GetSprite();
 	}
 
 	if (selected)
 	{
-		background = Console::Background::CYAN;
+		background = Console::Background::ULTRA_WHITE;
 	}
 
 	for (const std::string& row : image.GetImage())

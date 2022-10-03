@@ -26,6 +26,7 @@ void OnCardClick(MainController* mainController, const CardButton* cardButton)
 
 			if (mainController->IsAllCardsFound())
 			{
+				mainController->IntializeGame();
 				mainController->ChangeView(new VictoryView());
 			}
 		}
@@ -66,7 +67,6 @@ void GameView::Update(Console::Controller* controller, Console::Screen& screen)
 	View::Update(controller, screen);
 
 	screen.Draw(Console::Text{ .Str = "FPS: " + std::to_string(controller->CurrentFPS), .X = 1, .Y = 1 });
-	screen.Draw(Console::Text{ .Str = "Pixels: " + std::to_string(screen.PixelChanged), .X = 1, .Y = 2 });
 }
 
 void GameView::OnKeyPressed(Console::Controller* controller, char key)

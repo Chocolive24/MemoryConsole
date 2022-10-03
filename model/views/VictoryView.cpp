@@ -8,7 +8,7 @@ VictoryView::VictoryView()
 		new Console::BasicButton("Play again", GetMiddleScreen(), ReturnPosition(12), [](Console::Controller* controller)
 		{
 			controller->ChangeView(new GameView(dynamic_cast<MainController*>(controller)));
-		})
+		}, true)
 	});
 }
 
