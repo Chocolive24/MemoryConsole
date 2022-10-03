@@ -146,6 +146,7 @@
     <ClCompile Include="model\controller\MainController.cpp" />
     <ClCompile Include="Memory.cpp" />
     <ClCompile Include="model\card\Pattern.cpp" />
+    <ClCompile Include="model\views\VictoryView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="model\interactiveObjects\CardButton.h" />
@@ -166,6 +167,7 @@
     <ClInclude Include="model\views\GameView.h" />
     <ClInclude Include="model\controller\MainController.h" />
     <ClInclude Include="model\card\Pattern.h" />
+    <ClInclude Include="model\views\VictoryView.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="assets\images\cards\card_cat.txt" />
@@ -173,11 +175,11 @@
     <Text Include="assets\images\cards\card_diamond.txt" />
     <Text Include="assets\images\cards\card_face.txt" />
     <Text Include="assets\images\cards\card_heart.txt" />
+    <Text Include="assets\images\cards\card_hidden.txt" />
     <Text Include="assets\images\cards\card_plus.txt" />
     <Text Include="assets\images\cards\card_pray.txt" />
     <Text Include="assets\images\cards\card_spade.txt" />
     <Text Include="assets\images\cards\card_x.txt" />
-    <Text Include="assets\images\cards\card_hidden.txt" />
     <Text Include="assets\images\cards\placeholder.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -62,3 +62,16 @@ Card& MainController::GetSelectedCard()
 		}
 	}
 }
+
+bool MainController::IsAllCardsFound()
+{
+	for (Card& card : _cards)
+	{
+		if (!card.IsFound())
+		{
+			return false;
+		}
+	}
+
+	return true;
+}

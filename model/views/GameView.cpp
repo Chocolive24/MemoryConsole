@@ -1,4 +1,6 @@
 #include "GameView.h"
+
+#include "VictoryView.h"
 #include "../../libs/ConsoleViewController/utilities/Utility.h"
 
 void OnCardClick(MainController* mainController, const CardButton* cardButton)
@@ -21,6 +23,11 @@ void OnCardClick(MainController* mainController, const CardButton* cardButton)
 
 			secondCard.SetSelected(false);
 			currentCard.SetSelected(false);
+
+			if (mainController->IsAllCardsFound())
+			{
+				mainController->ChangeView(new VictoryView());
+			}
 		}
 		else
 		{
@@ -34,7 +41,7 @@ GameView::GameView(MainController* mainController)
 	std::vector<Console::InteractiveObject*> components;
 
 	int x = 10;
-	int y = 3;
+	int y = 4;
 	int i = 0;
 	for (Card& card: mainController->GetCards())
 	{

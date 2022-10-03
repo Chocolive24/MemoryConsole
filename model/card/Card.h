@@ -5,7 +5,7 @@
 class Card
 {
 private:
-	Pattern _pattern { PatternHidden() };
+	Pattern _pattern;
 	Console::Background _background { Console::Background::WHITE };
 	Console::Foreground _foreground{ Console::Foreground::BLACK };
 	bool _selected{ false };

@@ -21,6 +21,7 @@ private:
 	Console::Image _sprite;
 	PatternType _type { PatternType::HIDDEN };
 public:
+	Pattern() = default;
 	Pattern(const std::string& name, PatternType type);
 
 	Console::Image GetSprite() { return _sprite; }

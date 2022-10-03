@@ -18,5 +18,6 @@ public:
 	void IntializeGame();
 	bool IsACardSelected();
 	Card& GetSelectedCard();
+	bool IsAllCardsFound();
 };
 

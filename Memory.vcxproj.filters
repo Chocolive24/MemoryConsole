@@ -66,6 +66,9 @@
     <ClCompile Include="model\interactiveObjects\CardButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="model\views\VictoryView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="model\controller\MainController.h">
@@ -122,6 +125,9 @@
     <ClInclude Include="model\interactiveObjects\CardButton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="model\views\VictoryView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="assets\images\cards\placeholder.txt">
@@ -154,8 +160,6 @@
     <Text Include="assets\images\cards\card_x.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="assets\images\cards\card_hidden.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
+    <Text Include="assets\images\cards\card_hidden.txt" />
   </ItemGroup>
 </Project>
