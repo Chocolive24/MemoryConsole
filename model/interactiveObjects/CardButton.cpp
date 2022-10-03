@@ -1,38 +1,36 @@
 #include "CardButton.h"
 
-CardButton::CardButton(std::function<int(Console::Screen)> getX, std::function<int(Console::Screen)> getY,
-                       Card& card, const std::function<void(CardButton* cardButton)>& onClick, const bool xCentered,
-	const bool yCentered) : Console::ImageButton(getX, getY, card.GetPattern().GetSprite(), []() {},
-                                                                    xCentered, yCentered,
-                                                                    card.GetBackground(), card.GetForeground())
+CardButton::CardButton(const std::function<int(Console::Screen)> getX, const std::function<int(Console::Screen)> getY,
+                       int index, const std::function<void(MainController* mainController, const CardButton* cardButton)> onClick, Console::Background background, Console::Foreground foreground,
+                       const bool xCentered)
+	: InteractiveObject(getX, getY, xCentered)
 {
-	_card = card;
+	_index = index;
 	_onClick = onClick;
+	_background = background;
+	_foreground = foreground;
 }
 
-void CardButton::Draw(Console::Screen& screen, const bool selected)
+void CardButton::Draw(Console::Controller* controller, Console::Screen& screen, const bool selected)
 {
+	const auto mainController = dynamic_cast<MainController*>(controller);
 	auto background = Console::Background::WHITE;
 	auto foreground = Console::Foreground::BLACK;
 	int y = _getY(screen);
 	int x = _getX(screen);
-	Console::Image image = PatternHidden().GetSprite();
+	Console::Image image = mainController->GetHiddenImage();
+	Card& card = mainController->GetCards()[_index];
 
-	if (_yCentered)
-	{
-		y -= _image.GetHeight() / 2;
-	}
-
-	if (_card.IsFound() || _card.IsSelected())
+	if (card.IsFound() || card.IsSelected())
 	{
 		background = _background;
 		foreground = _foreground;
-		image = _card.GetPattern().GetSprite();
+		image = card.GetPattern().GetSprite();
 	}
 
 	if (selected)
 	{
-		background = Console::Background::YELLOW;
+		background = Console::Background::CYAN;
 	}
 
 	for (const std::string& row : image.GetImage())
@@ -48,6 +46,6 @@ void CardButton::OnKeyPress(Console::Controller* controller, const char key)
 {
 	if (key == Console::Key::Enter)
 	{
-		_onClick(this);
+		_onClick(dynamic_cast<MainController*>(controller), this);
 	}
 }

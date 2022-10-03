@@ -21,4 +21,5 @@ public:
 	bool IsSelected() { return _selected; }
 	bool IsFound() { return _found; }
 	void SetSelected(bool selected) { _selected = selected; }
+	void SetFound() { _found = true; }
 };

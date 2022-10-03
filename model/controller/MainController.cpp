@@ -7,8 +7,9 @@
 
 MainController::MainController()
 {
+	_hiddenImage = PatternHidden().GetSprite();
 	IntializeGame();
-	ChangeView(new GameView(*this));
+	ChangeView(new GameView(this));
 }
 
 void MainController::IntializeGame()
@@ -36,4 +37,28 @@ void MainController::IntializeGame()
 	}
 
 	std::shuffle(this->_cards.begin(), this->_cards.end(), std::random_device());
+}
+
+bool MainController::IsACardSelected()
+{
+	for (Card& card: _cards)
+	{
+		if (card.IsSelected())
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
+Card& MainController::GetSelectedCard()
+{
+	for (Card& card : _cards)
+	{
+		if (card.IsSelected())
+		{
+			return card;
+		}
+	}
 }
