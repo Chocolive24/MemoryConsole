@@ -14,6 +14,7 @@ public:
 
 	std::vector<Card>& GetCards() { return _cards; }
 	Console::Image GetHiddenImage() { return _hiddenImage; }
+	Console::View* GetView() { return _view; }
 
 	void IntializeGame();
 	bool IsACardSelected();

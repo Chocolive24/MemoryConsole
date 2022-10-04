@@ -3,7 +3,7 @@
 #include "VictoryView.h"
 #include "../../libs/ConsoleViewController/utilities/Utility.h"
 
-void OnCardClick(MainController* mainController, const CardButton* cardButton)
+void OnCardClick(MainController* mainController, CardButton* cardButton)
 {
 	Card& currentCard = mainController->GetCards()[cardButton->GetIndex()];
 

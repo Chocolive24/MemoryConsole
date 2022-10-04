@@ -1,7 +1,7 @@
 #include "CardButton.h"
 
 CardButton::CardButton(Position x, Position y,
-                       int index, const std::function<void(MainController* mainController, const CardButton* cardButton)> onClick, Console::Background background, Console::Foreground foreground, const bool xCentered)
+                       int index, const std::function<void(MainController* mainController, CardButton* cardButton)> onClick, Console::Background background, Console::Foreground foreground, const bool xCentered)
 
 	: InteractiveObject(x, y, xCentered)
 {
