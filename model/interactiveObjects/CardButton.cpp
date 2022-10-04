@@ -1,9 +1,9 @@
 #include "CardButton.h"
 
-CardButton::CardButton(const std::function<int(Console::Screen)> getX, const std::function<int(Console::Screen)> getY,
-                       int index, const std::function<void(MainController* mainController, const CardButton* cardButton)> onClick, Console::Background background, Console::Foreground foreground,
-                       const bool xCentered)
-	: InteractiveObject(getX, getY, xCentered)
+CardButton::CardButton(Position x, Position y,
+                       int index, const std::function<void(MainController* mainController, const CardButton* cardButton)> onClick, Console::Background background, Console::Foreground foreground, const bool xCentered)
+
+	: InteractiveObject(x, y, xCentered)
 {
 	_index = index;
 	_onClick = onClick;
@@ -16,9 +16,10 @@ void CardButton::Draw(Console::Controller* controller, Console::Screen& screen, 
 	const auto mainController = dynamic_cast<MainController*>(controller);
 	auto background = Console::Background::DARK_GRAY;
 	auto foreground = Console::Foreground::LIGHT_MAGENTA;
-	int y = _getY(screen);
-	int x = _getX(screen);
-	Console::Image image = mainController->GetHiddenImage();
+	int y = _y.GetValue(false);
+	int x = _x.GetValue(true);
+
+	Console::Image image;
 	Card& card = mainController->GetCards()[_index];
 
 	if (card.IsFound() || card.IsSelected())
@@ -26,13 +27,15 @@ void CardButton::Draw(Console::Controller* controller, Console::Screen& screen, 
 		background = Console::Background::WHITE;
 		foreground = _foreground;
 		image = card.GetPattern().GetSprite();
+	}else
+	{
+		image = mainController->GetHiddenImage();
 	}
 
 	if (selected)
 	{
 		background = Console::Background::ULTRA_WHITE;
 	}
-
 	for (const std::string& row : image.GetImage())
 	{
 		screen.Draw(Console::Text{

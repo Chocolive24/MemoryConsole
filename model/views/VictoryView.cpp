@@ -5,9 +5,11 @@
 VictoryView::VictoryView()
 {
 	setComponents({
-		new Console::BasicButton("Play again", GetMiddleScreen(), ReturnPosition(12), [](Console::Controller* controller)
+		new Console::BasicButton("Play again", Position(0.5f), Position(12), [](Console::Controller* controller)
 		{
-			controller->ChangeView(new GameView(dynamic_cast<MainController*>(controller)));
+			const auto mainController = dynamic_cast<MainController*>(controller);
+			mainController->IntializeGame();
+			controller->ChangeView(new GameView(mainController));
 		}, true)
 	});
 }

@@ -10,12 +10,12 @@ private:
 	std::function<void(MainController* mainController, const CardButton* cardButton)> _onClick;
 	Console::Background _background;
 	Console::Foreground _foreground;
+	Card _card;
 
-	inline static Console::Image _hiddenImage = PatternHidden().GetSprite();
+	//inline static Console::Image _hiddenImage = PatternHidden().GetSprite();
 public:
-	CardButton(std::function<int(Console::Screen)> getX, std::function<int(Console::Screen)> getY, int index,
-				const std::function<void(MainController* mainController, const CardButton* cardButton)> onClick, Console::Background background, Console::Foreground foreground,
-				const bool xCentered = false);
+	CardButton(Position x, Position y, int index,
+				const std::function<void(MainController* mainController, const CardButton* cardButton)> onClick, Console::Background background, Console::Foreground foreground, const bool xCentered = false);
 
 	void Draw(Console::Controller* controller, Console::Screen& screen, bool selected) override;
 	int GetIndex() const { return _index; }

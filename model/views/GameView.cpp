@@ -26,7 +26,6 @@ void OnCardClick(MainController* mainController, const CardButton* cardButton)
 
 			if (mainController->IsAllCardsFound())
 			{
-				mainController->IntializeGame();
 				mainController->ChangeView(new VictoryView());
 			}
 		}
@@ -46,8 +45,7 @@ GameView::GameView(MainController* mainController)
 	int i = 0;
 	for (Card& card: mainController->GetCards())
 	{
-		components.emplace_back(new CardButton(ReturnPosition(x), ReturnPosition(y), i, OnCardClick, card.GetBackground(), 
-			card.GetForeground()));
+		components.emplace_back(new CardButton(Position(x), Position(y), i, OnCardClick, card.GetBackground(), card.GetForeground()));
 
 		x += card.GetPattern().GetSprite().GetWidth() + 2;
 

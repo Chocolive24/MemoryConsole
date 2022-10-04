@@ -69,6 +69,9 @@
     <ClCompile Include="model\views\VictoryView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="libs\ConsoleViewController\view\interactive\Position.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="model\controller\MainController.h">
@@ -126,6 +129,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="model\views\VictoryView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\ConsoleViewController\view\interactive\Position.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -147,6 +147,7 @@
     <ClCompile Include="Memory.cpp" />
     <ClCompile Include="model\card\Pattern.cpp" />
     <ClCompile Include="model\views\VictoryView.cpp" />
+    <ClCompile Include="libs\ConsoleViewController\view\interactive\Position.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="model\interactiveObjects\CardButton.h" />
@@ -168,6 +169,7 @@
     <ClInclude Include="model\controller\MainController.h" />
     <ClInclude Include="model\card\Pattern.h" />
     <ClInclude Include="model\views\VictoryView.h" />
+    <ClInclude Include="libs\ConsoleViewController\view\interactive\Position.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="assets\images\cards\card_cat.txt" />
